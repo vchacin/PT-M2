@@ -63,17 +63,24 @@ function buildToDo(todo, index) {
 
   let toDoText = document.createElement('span');
   toDoText.innerHTML = todo.description;
-  toDoText.setAttribute('id', index);
+  
+
+  let checkbox = document.createElement('input');
+  checkbox.setAttribute('type', 'checkbox');
+  checkbox.setAttribute('id', index);
   
   // En la función 'buildToDo' agregar un 'click' event listener al elemento 'toDoText', pasándole
   // esta función como callback
-  toDoText.addEventListener('click', completeToDo);
+  checkbox.addEventListener('click', completeToDo);
+  checkbox.classList.add('completeCheckbox');
 
   if (todo.complete === true){
+    checkbox.setAttribute('checked', true);
     toDoText.classList.add('completeText');
   }
 
   toDoShell.appendChild(toDoText);
+  toDoShell.appendChild(checkbox);
 
   return toDoShell;
 }
