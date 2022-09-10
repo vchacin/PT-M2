@@ -12,6 +12,9 @@ let toDoItems = [];
 let span = document.querySelector('#createdBy');
 span.innerHTML = 'Aplicación creada por Victoria';
 */
+
+// selecciono el elemento en el dom y modifico su contenido
+
 document.querySelector('#createdBy').innerHTML = 'Aplicación creada por: Victoria';
 
 // Crear una clase denominada 'ToDo' cuyo constructor debe recibir un único parámetro del tipo string
@@ -63,18 +66,17 @@ function buildToDo(todo, index) {
 
   let toDoText = document.createElement('span');
   toDoText.innerHTML = todo.description;
-  
 
   let checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
   checkbox.setAttribute('id', index);
-  
-  // En la función 'buildToDo' agregar un 'click' event listener al elemento 'toDoText', pasándole
-  // esta función como callback
+
+  // agrego un event listener de la funcion complete todo que utiliza el metodo del mismo nombre y cambia la propiedad que viene por default en false, a true
   checkbox.addEventListener('click', completeToDo);
   checkbox.classList.add('completeCheckbox');
 
   if (todo.complete === true){
+    //agrego el atributo checked y la clase correspondiente
     checkbox.setAttribute('checked', true);
     toDoText.classList.add('completeText');
   }
@@ -96,6 +98,7 @@ function buildToDos(toDos) {
   // let listaToDos = toDos.map((item, i) => buildToDo(item, i));
   // return listaToDos;
 
+  // itero los elementos de la lista y les aplico a cada uno la funcion buildtodo de arriba
   return toDos.map(buildToDo);
 }
 

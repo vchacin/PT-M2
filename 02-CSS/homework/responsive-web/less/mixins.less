@@ -1,1 +1,37 @@
 // Mixins acá
+
+/*
+.botones(@bg-color,@font-family,@color-font) {
+    background-color: @bg-color;
+    font-family: @font-family;
+    font-size: 1.5em;
+    display: inline-flex;
+    padding: 1em;
+    border-radius: 0.7em;
+    color:@color-font
+}
+*/
+
+* {
+    box-sizing: border-box;
+} 
+
+.flex-box(@flex-direction) {
+    display: flex;
+    flex-direction: @flex-direction;
+    align-items: center;
+}
+
+.border(){
+    border-bottom: 2px solid @sea-shell;
+}
+
+.btn-registro(@background-color, @padding, @font-size, @color){
+    color: @color;
+    background-color: @background-color;
+    padding: @padding;
+    display: inline-flex;
+    font-size: @font-size;
+    border-radius: 10px;
+}
+
