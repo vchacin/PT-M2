@@ -318,6 +318,24 @@ footer {
   height: auto;
   border-radius: 10px;
 }
+.home .actual .form .form-label {
+  font-size: 14px;
+}
+.home .actual .form .form-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  display: block;
+  border: 1px solid #23293B;
+  border-radius: 30px;
+}
+.home .actual .form .btn {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
 .home .footer {
   background-color: #F6F6F6;
 }
