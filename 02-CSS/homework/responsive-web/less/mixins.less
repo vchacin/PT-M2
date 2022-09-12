@@ -26,12 +26,27 @@
     border-bottom: 2px solid @sea-shell;
 }
 
-.btn-registro(@background-color, @padding, @font-size, @color){
+.btn-registro(@background-color, @display, @padding, @font-size, @color){
     color: @color;
     background-color: @background-color;
     padding: @padding;
-    display: inline-flex;
+    display: @display;
     font-size: @font-size;
     border-radius: 10px;
+    border: 1px solid @background-color;
+    animation: example 4s infinite;
+    &:hover {
+        background-color: @wild-sand;
+        color: @waterloo;
+        border-color: @waterloo;
+        border: 1px solid @waterloo;
+        transition: all ease-in-out .3s;
+    }
+}
+
+@keyframes example {
+    0% {background-color: @ebony-clay;}
+    50% {background-color: blue;}
+    100% {background-color: @ebony-clay;}
 }
 

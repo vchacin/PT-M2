@@ -19,6 +19,17 @@ html {
 * {
   box-sizing: border-box;
 }
+@keyframes example {
+  0% {
+    background-color: #23293B;
+  }
+  50% {
+    background-color: blue;
+  }
+  100% {
+    background-color: #23293B;
+  }
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -181,32 +192,41 @@ p {
   width: 100%;
   margin: 0 auto;
 }
-.navbar__background {
-  background-color: #F6F6F6;
-}
-.navbar__container {
+.nav {
+  position: fixed;
+  width: 100%;
+  background-color: #b5b5b569;
+  color: #23293B;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 7.5px;
-  color: #454A59;
   border-bottom: 2px solid #F1F1F1;
 }
-.header__text {
+.nav .header__text {
   font-size: 4rem;
   padding: 2rem;
 }
-ul {
+.nav ul {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 10px;
 }
-li a {
+.nav li a {
   text-decoration: none;
   color: #000;
   font-size: 1.8rem;
   padding: 1rem;
+}
+@media (max-width: 500px) {
+  .nav .header__text {
+    font-size: 3rem;
+    padding: 1.7rem;
+  }
+  .nav li a {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+  }
 }
 /*
 .btn {
@@ -223,11 +243,17 @@ footer {
   justify-content: center;
   align-items: center;
 }
+.home {
+  padding-top: 120px;
+}
 .home .intro h2 {
   padding: 15px;
 }
 .home .intro p {
   padding: 0 15px;
+}
+.home .intro .main-header {
+  border-radius: 30px;
 }
 .home .music-images {
   display: flex;
@@ -273,6 +299,15 @@ footer {
   display: inline-flex;
   font-size: 1.5rem;
   border-radius: 10px;
+  border: 1px solid #23293B;
+  animation: example 4s infinite;
+}
+.home .actual .actual-text .btn:hover {
+  background-color: #F6F6F6;
+  color: #81848E;
+  border-color: #81848E;
+  border: 1px solid #81848E;
+  transition: all ease-in-out 0.3s;
 }
 .home .actual .actual-img {
   width: 46%;
@@ -283,18 +318,119 @@ footer {
   height: auto;
   border-radius: 10px;
 }
-.main-header {
-  border-radius: 30px;
-}
-.txt-blue {
-  color: #23293B;
-}
-.txt-gray {
-  color: #5E6164;
-}
-.bg-footer {
+.home .footer {
   background-color: #F6F6F6;
 }
-.txt-footer {
+.home .footer .txt-footer {
   color: #81848E;
+}
+.home .txt-blue {
+  color: #23293B;
+}
+.home .txt-gray {
+  color: #5E6164;
+}
+@media (max-width: 500px) {
+  .home {
+    padding-top: 100px;
+  }
+  .home .intro {
+    margin-bottom: 20px;
+    padding: 0 1.5rem;
+  }
+  .home .intro .main-header {
+    border-radius: 10px;
+    width: 100%;
+  }
+  .home .intro h2 {
+    font-size: 2.5rem;
+    padding: 15px 0;
+  }
+  .home .intro p {
+    font-size: 14px;
+    padding: 0;
+  }
+  .home .music-images img {
+    width: 100%;
+  }
+  .home .musica-nueva {
+    padding: 15px;
+    border-color: #dee2e6;
+  }
+  .home .musica-nueva h3 {
+    font-size: 2.5rem;
+    margin-top: 0px;
+  }
+  .home .musica-nueva p {
+    font-size: 14px;
+    margin-top: 13px;
+  }
+  .home .ondas,
+  .home .tecnologia {
+    display: none;
+  }
+  .home .btn {
+    color: #F1F1F1;
+    background-color: #23293B;
+    padding: 1.5rem 1rem;
+    display: block;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #23293B;
+    animation: example 4s infinite;
+  }
+  .home .btn:hover {
+    background-color: #F6F6F6;
+    color: #81848E;
+    border-color: #81848E;
+    border: 1px solid #81848E;
+    transition: all ease-in-out 0.3s;
+  }
+  .home .actual {
+    margin-top: 40px;
+    border-top: 1px solid #dee2e6;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .home .actual .actual-text {
+    width: 100%;
+    padding-top: 10px;
+  }
+  .home .actual .actual-text h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  .home .actual .actual-text p {
+    font-size: 14px;
+    margin-bottom: 26px;
+  }
+  .home .actual .actual-text .btn {
+    text-align: center;
+    color: #F1F1F1;
+    background-color: #23293B;
+    padding: 1.5rem 1rem;
+    display: block;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #23293B;
+    animation: example 4s infinite;
+  }
+  .home .actual .actual-text .btn:hover {
+    background-color: #F6F6F6;
+    color: #81848E;
+    border-color: #81848E;
+    border: 1px solid #81848E;
+    transition: all ease-in-out 0.3s;
+  }
+  .home .actual .actual-img {
+    width: 100%;
+    margin: 0;
+  }
+  .home .actual .actual-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
 }
