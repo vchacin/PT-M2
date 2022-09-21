@@ -9,7 +9,9 @@ function showFriends(){
     $.get(`${baseUrl}`, function(data){
         data.forEach(amigo => (
             $(
-                `<li id=${amigo.id}>${amigo.name} X</li>`
+                `<li id=${amigo.id}>${amigo.name} 
+                    <button id=${amigo.id} onclick='deleteFriend(${amigo.id})'>X</button> 
+                </li>`
             ).appendTo('ul')
             // let li = document.createElement('li');
             // li.id = amigo.id;
@@ -40,11 +42,17 @@ $('#search').click(searchFriend);
 
 /* Un input que reciba el id de un amigo y un boton "borrar". Al hacer click en el boton, borraremos el amigo del servidor haciendo un DELETE a nuestro servidor, concatenando el id del usuario que queremos borrar. Por ej: http://localhost:5000/amigos/2 le pediria al servidor el amigo con id = 2 */
 
-function deleteFriend(){
-    let deleteId = $('#inputDelete').val();
+function deleteFriend(idCruz){
+    let deleteId;
+    let deleted; 
+    
+    if (typeof idCruz === 'number'){
+        deleteId = idCruz;
+    } else {
+        deleteId = $('#inputDelete').val();
+    }
+    
     if (deleteId){
-        let deleted; 
-        
         $.get(`${baseUrl}/${deleteId}`, function(amigo){
             deleted = amigo.name;
         })
