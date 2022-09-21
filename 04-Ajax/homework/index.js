@@ -3,6 +3,8 @@ var baseUrl = 'http://localhost:5000/amigos';
 /* Utiliza el evento click en un boton para hacer que al hacer click en el mismo aparezca en el DOM una lista con todos los amigos que el servidor nos devolvera al hacer un GET a la ruta http://localhost:5000/amigos */
 
 $('#boton').click(function(){
+    // Vacio la lista antes de ejecutar la request para evitar sumar con cada una
+    $('#lista').empty();
     // hago un get, paso la url como primer parametro y un callback donde almaceno la respuesta
     $.get(`${baseUrl}`, function(data){
         data.forEach(amigo => (
