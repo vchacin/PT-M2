@@ -9,7 +9,11 @@ $('#boton').click(function(){
             $(
                 `<li id=${amigo.id}>${amigo.name}</li>`
             ).appendTo('ul')
-             
+            // let li = document.createElement('li');
+            // li.id = amigo.id;
+            // li.innerText = amigo.name;
+            // let list = document.getElementById('lista');
+            // list.appendChild(li);
         ));
     });
 });
