@@ -16,17 +16,44 @@ onClose: recibe una función que se va a ejecutar cuando el usuario haga click e
 
 export default function Card({max, min, name, img, onClose}) {
   // acá va tu código
-  return <div>
-            <div>
-              <button onClick={onClose}>X</button>
-            </div>
-            <div>
-              <h2>{name}</h2>
-                <p>Min {min}</p>
-                <p>Max {max}</p>
-            </div>
-            <div>
-              <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="svg" />
-            </div>
+  return (
+    <div>
+        <div>
+          <button onClick={onClose}>X</button>
         </div>
+        <div>
+          <h2>{name}</h2>
+            <p>Min {min}</p>
+            <p>Max {max}</p>
+        </div>
+        <div>
+          <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="svg" />
+        </div>
+    </div>
+  )
 };
+
+
+/*
+class Card extends React.component{
+  render(){
+    return (
+      <div>
+          <div>
+            <button onClick={this.props.onClose}>X</button>
+          </div>
+          <div>
+            <h2>{this.props.name}</h2>
+              <p>Min {this.props.min}</p>
+              <p>Max {this.props.max}</p>
+          </div>
+          <div>
+            <img src={`http://openweathermap.org/img/wn/${this.props.img}@2x.png`} alt="svg" />
+          </div>
+      </div>
+    )
+  }
+}
+
+export default Card;
+*/
