@@ -47,7 +47,7 @@
 }
 
 .highlight:hover {
-    background: #4279a3;
+    background: transparent;
     color: #fff;
 }
 

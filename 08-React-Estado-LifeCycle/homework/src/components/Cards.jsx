@@ -1,5 +1,6 @@
 import React from 'react';
 // Importo el componente
+import error from '../error.png'
 import Card from './Card';
 import styles from './styles/Cards.module.css';
 
@@ -14,9 +15,18 @@ export default function Cards(props) {
   // acá va tu código
   // tip, podés usar un map
   console.log(props);
+
+  const style = {
+    width: 400
+  };
   
   if (!props.cities){
-    return 'No hay ciudades para mostrar';
+    return (
+      <div>
+        <img src={error} style={style} alt="404"/>
+        <p>No hay ciudades para mostrar, por favor intenta de nuevo más tarde</p>
+      </div>
+    )
   }
 
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Cards from './components/Cards.jsx';
 import Nav from './components/Nav.jsx';
-import data from './data.js';
+// import data from './data.js';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <hr />
       <div>
         <Cards
-          cities={data}
+          // cities={data}
         />
       </div>
     </div>
