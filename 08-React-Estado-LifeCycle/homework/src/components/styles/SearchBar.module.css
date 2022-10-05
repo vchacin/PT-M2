@@ -27,8 +27,10 @@
 }
 
 .input:focus {
-    font-size: 9px;
-    top: 3px;
+    width: 300px;
+    font-size: 14px;
+    padding: 20px;
+    top: 200;
     color: #4279a3;
     transition: all 0.5s ease;
 }
@@ -49,9 +51,4 @@
 .highlight:hover {
     background: transparent;
     color: #fff;
-}
-
-.input:focus ~ .highlight {
-    width: 150px;
-    transition: all 1s ease;
 }
