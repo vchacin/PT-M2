@@ -22,12 +22,12 @@ export default function Cards(props) {
           {
             props.cities && props.cities.map (city => 
               <Card 
-              name={city.name} 
-              min={city.main.temp_min} 
-              max={city.max} 
-              img={city.weather[0].icon} 
-              key={city.id}
-              onClose={() => {alert(city.name)}}
+                name={city.name} 
+                min={city.main.temp_min} 
+                max={city.max} 
+                img={city.weather[0].icon} 
+                key={city.id}
+                onClose={() => {alert(city.name)}}
               />
             )
           }
