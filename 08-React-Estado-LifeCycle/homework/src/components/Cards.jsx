@@ -10,16 +10,15 @@ Este Componente nos va a servir para renderizar muchos Componentes Cards. Básic
 Tip: Podés usar la función map y devolver un componente Card por cada elemento del arreglo. Acá un ejemplo de la documentación de React.
 */
 
-export default function Cards(props) {
+export default function Cards({cities, onClose}) {
   // acá va tu código
   // tip, podés usar un map
-  console.log('props', props);
 
   const style = {
     width: 400
   };
   
-  if (!props.cities || props.cities.length === 0){
+  if (!cities || cities.length === 0){
     return (
       <div>
         <img src={error} style={style} alt="404"/>
@@ -32,7 +31,7 @@ export default function Cards(props) {
   return (
     <div className={`${styles.bg} ${styles.container}`}>
           {
-            props.cities && props.cities.map (city => 
+            cities && cities.map (city => 
               <Card 
               name={city.name}
               temp={city.temp} 
@@ -42,7 +41,7 @@ export default function Cards(props) {
               description={city.description}
               img={city.img} 
               key={city.id}
-              onClose={() => {alert(city.name)}}
+              onClose={() => {onClose(city.id)}}
               />
             )
           }

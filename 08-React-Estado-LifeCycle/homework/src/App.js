@@ -39,13 +39,17 @@ function App() {
     //pero de momento agregaremos una ciudad por default para ver que funcione
   }
 
+  function onClose(id) {
+    setCities(oldCities => oldCities.filter(c => c.id !== id));
+  }
+
   console.log('citiees', cities)
 
   return (
     <div className="App">
       <Nav onSearch={onSearch} />
       <hr/>
-      <Cards cities={cities} />
+      <Cards cities={cities} onClose={onClose} />
     </div>
   );
 }
