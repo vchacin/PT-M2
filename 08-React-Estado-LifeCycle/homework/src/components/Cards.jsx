@@ -10,21 +10,21 @@ Este Componente nos va a servir para renderizar muchos Componentes Cards. Básic
 Tip: Podés usar la función map y devolver un componente Card por cada elemento del arreglo. Acá un ejemplo de la documentación de React.
 */
 
-
 export default function Cards(props) {
   // acá va tu código
   // tip, podés usar un map
-  console.log(props);
+  console.log('props', props);
 
   const style = {
     width: 400
   };
   
-  if (!props.cities){
+  if (!props.cities || props.cities.length === 0){
     return (
       <div>
         <img src={error} style={style} alt="404"/>
         <p>No hay ciudades para mostrar, por favor intenta de nuevo más tarde</p>
+        <p>o ingresando el nombre en la barra de búsqueda</p>
       </div>
     )
   }
@@ -35,13 +35,12 @@ export default function Cards(props) {
             props.cities && props.cities.map (city => 
               <Card 
               name={city.name}
-              temp={city.main.temp} 
-              clouds={city.clouds.all}
-              humidity={city.main.humidity}
-              pressure={city.main.pressure}
-              wind={city.wind.speed} 
-              description={city.weather[0].main}
-              img={city.weather[0].icon} 
+              temp={city.temp} 
+              clouds={city.clouds}
+              humidity={city.humidity}
+              wind={city.wind} 
+              description={city.description}
+              img={city.img} 
               key={city.id}
               onClose={() => {alert(city.name)}}
               />
