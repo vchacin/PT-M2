@@ -48,7 +48,6 @@ function App() {
   return (
     <div className="App">
       <Nav onSearch={onSearch} />
-      <hr/>
       <Cards cities={cities} onClose={onClose} />
     </div>
   );
