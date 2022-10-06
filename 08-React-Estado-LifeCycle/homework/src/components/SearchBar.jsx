@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './styles/SearchBar.module.css';
 
 /*
@@ -7,13 +7,16 @@ Este Componente recibe por props una función onSearch que recibe un parámetro 
 
 export default function SearchBar({onSearch}) {
   // acá va tu código
+  const [city, setCity] = useState("");
+
   return <div className={styles.container}>
             <form onSubmit={(e) => {
                 e.preventDefault();
-                onSearch("Cairns");
-                console.log('Hice clic')
+                onSearch(city);
+                console.log('Hice clic');
+                setCity("");
             }}>
-              <input className={styles.input} type="text" placeholder='Enter a city name' />
+              <input className={styles.input} type="text" placeholder='Enter a city name' value={city} onChange={e => setCity(e.target.value)} />
               <input className={styles.highlight} type="submit" value="Add"></input>
             </form>
         </div>
