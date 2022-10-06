@@ -20,9 +20,11 @@ export default function Card({temp, clouds, humidity, wind, description, name, i
   const [time, setTime] = useState(null);
 
   useEffect(() => {
-    let time = getCurrentTime();
-    setTime(time);
-  }, []);
+    setTimeout(() => {
+      let time = getCurrentTime();
+      setTime(time);
+    }, 1000);
+  });
 
   const getCurrentTime = () => {
     let today = new Date();
@@ -31,7 +33,8 @@ export default function Card({temp, clouds, humidity, wind, description, name, i
     let day = (today.getDate < 10 ? '0' : '') + today.getDate();
     let month = (today.getMonth < 10 ? '0' : '') + today.getMonth();
     let year = (today.getFullYear < 10 ? '0' : '') + today.getFullYear();
-    return hours + ':' + minutes + ' - ' + day + '/' + month + '/' + year;
+    let seconds = (today.getSeconds < 10 ? '0' : '') + today.getSeconds();
+    return `${hours} : ${minutes} : ${seconds} - ${day} / ${month} / ${year}`;
   }
 
   const setCelsius = fahrenheit => {

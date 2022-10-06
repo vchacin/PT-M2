@@ -18,7 +18,7 @@ export default function Cards({cities, onClose}) {
     width: 400
   };
   
-  if (!cities || cities.length === 0){
+  if (!cities){
     return (
       <div>
         <img src={error} style={style} alt="404"/>
