@@ -33,13 +33,7 @@ export default function Card({temp, clouds, humidity, wind, description, name, i
     let day = (today.getDate < 10 ? '0' : '') + today.getDate();
     let month = (today.getMonth < 10 ? '0' : '') + today.getMonth();
     let year = (today.getFullYear < 10 ? '0' : '') + today.getFullYear();
-    let seconds = (today.getSeconds < 10 ? '0' : '') + today.getSeconds();
-    return `${hours} : ${minutes} : ${seconds} - ${day} / ${month} / ${year}`;
-  }
-
-  const setCelsius = fahrenheit => {
-    let celsius = (fahrenheit - 32) * 5/9;
-    return celsius.toFixed(0);
+    return `${hours} : ${minutes} - ${day} / ${month} / ${year}`;
   }
 
   return (
@@ -60,7 +54,7 @@ export default function Card({temp, clouds, humidity, wind, description, name, i
 
         <div className={styles.layoutCard}>
           <p className={styles.temp}>
-            {setCelsius(temp)}°
+            {temp}°
           </p>
         </div>
 
@@ -76,15 +70,15 @@ export default function Card({temp, clouds, humidity, wind, description, name, i
               <div className={styles.layoutCard}>
                 <div className={styles.cardItem}>
                   <p className={styles.variables}>Clouds</p>
-                  <p>{clouds}</p>
+                  <p className={styles.units}>{clouds}</p>
                 </div>
                 <div className={styles.cardItem}>
                   <p className={styles.variables}>Humidity</p>
-                  <p>{humidity}</p>
+                  <p className={styles.units}>{humidity}</p>
                 </div>
                 <div className={styles.cardItem}>
                   <p className={styles.variables}>Wind</p> 
-                  <p>{wind}</p>
+                  <p className={styles.units}>{wind}</p>
                 </div>
               </div>
             </div>  
