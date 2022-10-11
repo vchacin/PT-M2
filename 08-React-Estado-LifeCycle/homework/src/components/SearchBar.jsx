@@ -16,7 +16,13 @@ export default function SearchBar({onSearch}) {
                 console.log('Hice clic');
                 setCity("");
             }}>
-              <input className={styles.input} type="text" placeholder='Enter a city name' value={city} onChange={e => setCity(e.target.value)} />
+              <input 
+                className={styles.input} 
+                type="text" 
+                placeholder='Enter a city name' 
+                value={city} 
+                onChange={e => setCity(e.target.value)} 
+              />
               <input className={styles.highlight} type="submit" value="Add"></input>
             </form>
         </div>
