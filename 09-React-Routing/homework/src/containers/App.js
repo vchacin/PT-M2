@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 import Nav from '../components/Nav.jsx';
-import Cards from '../components/Cards.jsx';
+import Home from '../components/Cards.jsx';
 import Ciudad from '../components/Ciudad.jsx';
 import About from '../components/About.jsx';
 
@@ -48,19 +48,18 @@ function App() {
   }
   return (
     <div className="App">
-      <Route
-        path='/'
-        render={() => <Nav onSearch={onSearch} />}
-      />
-      <Route
-        path='/'
-        exact
-        render={() => 
-        <Cards
-          cities={cities}
-          onClose={onClose}
-        />}
-      />
+
+
+
+
+
+      <Route path='/' render={() => <Nav/>} />
+      <Route path='/' exact render={() => <Home/>} />
+
+
+
+
+
       <Route
         path='/about'
         exact
